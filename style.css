@@ -366,7 +366,4 @@ footer p {
     /*フォーム*/
     input[type="text"]
     input[type="email"]
-    textarea {
-        max-width: 100%;
-    }
 }
