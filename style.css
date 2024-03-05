@@ -286,49 +286,14 @@ footer p {
 
 #contact .center {
     display: flex;
-    justify-content: center; /* 要素を横方向に中央に配置 */
-    align-items: center; /* 要素を縦方向に中央に配置 */
-    height: 70vh; /* ビューポートの高さいっぱいに要素を表示 */
+    justify-content: center; 
+    align-items: center; 
+    height: 30vh; 
 }
 
 
 
 
-/* フォーム 
-form div {
-    margin-bottom: 14px;
-}
-label {
-    font-size: 1.125rem;
-    margin-bottom: 10px;
-    display: block;
-}
-input[type="text"],
-input[type="email"],
-textarea {
-    background: rgba(156, 255, 197, 0.5);
-    border: 1px #fff solid;
-    border-radius: 9px;
-    padding: 10px;
-    font-size: 1rem;
-}
-input[type="text"],
-input[type="email"] {
-    width: 100%;
-    max-width: 500px;
-}
-textarea {
-    width: 100%;
-    max-width: 1000px;
-    height: 6rem;
-}
-input[type="submit"] {
-    border: none;
-    cursor: pointer;
-    line-height: 1;
-    margin-bottom: 120px;
-}
------------------------------------------------------*/
 
 
 
