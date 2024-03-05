@@ -1,5 +1,23 @@
 @charset "UTF-8";
 
+/* メインナビゲーション */
+nav {
+    display: flex;
+}
+
+.main-nav {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-right: 20px;
+}
+
+.main-nav li a {
+    text-decoration: none;
+    color: #000000;
+}
 
 /*共通部分
 --------------------------*/
@@ -22,7 +40,7 @@ img {
 }
 
 /*header
-------------------------*/
+--------------------------------------------------------------------*/
 .logo {
     width: 250px;
     margin-top: 0px;
@@ -56,6 +74,18 @@ img {
     padding: 0 4%; 
 }
 
+/*footer
+-----------------------------------*/
+footer {
+    background: #000;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p {
+    color: #fff;
+    font-size: 0.875rem;
+}
+
 /*home
 -------------------------------------------------------------------*/
 .home-content {
@@ -81,13 +111,16 @@ img {
 .button {
     font-size: 1.375rem;
     background: #00BF63;
-    color: #fff;
-    border-radius: 5px;
+    color: #ffffff;
     padding: 18px 32px;
+    border-radius: 50px;
+    box-shadow:  10px 10px 20px #3d3d3d;
 }
 .button:hover {
-    background: #00BF63;
+    background: #ffffff;
+    color: #00BF63;
 }
+
 
 /*history
 -----------------------------------------------------------------------*/
@@ -131,21 +164,20 @@ img {
     justify-content: center;
     margin: 50px 0px 150px 0px; 
     grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 300px 300px;
-    gap: 50px;
-  }
+    grid-template-rows: 1fr 1fr;
+    gap: 10px 10px;
+    }
 
   .item {
     display: flex;
-    align-items: center;
     justify-content: center;
     background: #ffffff;
   }
 
   .hover {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
   }
   .hover .hover-img {
     margin: 0px;
@@ -185,19 +217,20 @@ img {
     opacity: 1;
   }
 
-  /*profile
----------------------------------------------------------------------------------------*/
+
+/*profile
+------------------------------------------------------------------------------------*/
 .pro-container {
     display: grid;
     justify-content: center;
     margin: 50px 0px 150px 0px; 
     grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 300px 300px;
-    gap: 50px;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px 10px;
   }
+
   .itemp {
     display: flex;
-    align-items: center;
     justify-content: center;
     background: #ffffff;
   }
@@ -248,11 +281,20 @@ img {
 }
 #contact {
     background-image: url();
-    min-height: 10vh;
-    
+    min-height: 70vh;
 }
 
-/* フォーム */
+#contact .center {
+    display: flex;
+    justify-content: center; /* 要素を横方向に中央に配置 */
+    align-items: center; /* 要素を縦方向に中央に配置 */
+    height: 70vh; /* ビューポートの高さいっぱいに要素を表示 */
+}
+
+
+
+
+/* フォーム 
 form div {
     margin-bottom: 14px;
 }
@@ -286,33 +328,30 @@ input[type="submit"] {
     line-height: 1;
     margin-bottom: 120px;
 }
+-----------------------------------------------------*/
 
 
-/*footer
------------------------------------*/
-footer {
-    background: #000;
-    text-align: center;
-    padding: 26px 0;
-}
-footer p {
-    color: #fff;
-    font-size: 0.875rem;
-}
 
 
+/*responsive
+------------------------------------------------------------------------------*/
 @media (max-width: 760px) {
     .page-title{
         font-size: 2.5rem;
     }
 
-    /* header*/
+    /* header
+    ---------------------------------------*/
     .main-nav {
         font-size: 1rem;
-        margin-top: 10px;
+        font-weight: bold;
+        margin-top: auto;
     }
     .main-nav li{
-        margin: 0 20px;
+        text-align: center;
+    }
+    .main-nav li a {
+        color: #00BF63;
     }
 
     /* home------------------------------------*/
@@ -339,9 +378,16 @@ footer p {
     }
 
     /*project----------------------------------------*/
+    #project .page-title{
+        margin-top: 20px;
+    }
+
     .container {
-        
+        display: grid;
+        justify-content: center;
+        margin: 50px 0px 150px 0px; 
         grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
         gap: 50px;
     }
     .item {
@@ -351,19 +397,30 @@ footer p {
 
     /*profile------------------------------------------*/
     .pro-container {
+        display: grid;
+        justify-content: center;
+        margin: 50px 0px 150px 0px; 
         grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        gap: 50px;
     }
     .itemp {
-        grid-template-columns: 1fr;
+        display: flex;
+        justify-content: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
     }
-
 
     /*contact--------------------------------------------*/
     #contact .page-title{
         margin-top: 30px;
     }
 
-    /*フォーム*/
+    /*フォーム
     input[type="text"]
     input[type="email"]
+    textarea {
+        max-width: 100%;
+    }
+    ---------*/
 }
