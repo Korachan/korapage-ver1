@@ -161,62 +161,108 @@ footer p {
 
 .container {
     display: grid;
-    justify-content: center;
-    margin: 50px 0px 150px 0px; 
-    grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px 10px;
-    }
+    grid-template-columns: repeat(3, 1fr); /* 3列を均等に配置 */
+    grid-template-rows: repeat(2, auto); /* 2行を自動サイズに配置 */
+    grid-gap: 10px; /* アイテム間の間隔を設定 */
+}
 
-  .item {
-    display: flex;
-    justify-content: center;
-    background: #ffffff;
-  }
+.item {
+    text-align: center; /* アイテム内のテキストを中央揃え */
+    padding: 10%; /* アイテムの内側の余白を設定 */
+    margin-bottom: 10%;
+}
 
-  .hover {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .hover .hover-img {
-    margin: 0px;
-    padding: 0px;
-  }
-  .hover-img img {
-    width: 100%;
-    height: 100%;
-  }
-  .hover .hover-text {
-    font-family: "MS PMincho";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+.item img {
+    max-width: 80%; /* 画像の幅を親要素に合わせて調整 */
+    height: auto; /* 高さを自動調整してアスペクト比を保持 */
+}
+
+/*text
+-----------------------------------------------------*/
+#project .text1{
+    font-size: 40px;
+    color: #00BF63;
+}
+
+#project .text2{
+    font-size: 40px;
+    color: #ff3131;
+}
+
+#project .text3{
+    font-size: 40px;
+    color: #38b6ff;
+}
+
+#project .text4{
+    font-size: 40px;
+    color: #ffbd59;
+}
+
+#project .text5{
+    font-size: 40px;
+    color: #004aad;
+}
+
+#project .text6{
+    font-size: 40px;
+    color: #8c52ff;
+}
+
+#project .text{
+    text-align: left;
+    margin-bottom: 20%;
+}
+
+/*button
+--------------------------------------------------*/
+#project a.button1{
+    font-size: 1rem;
+    background: #00BF63;
     color: #ffffff;
-    background-color: rgba(18, 78, 29, 0.719);
-    /*透明にして表示させない*/
-    opacity: 0;
-    /*ホバーの動き方*/
-    transition: .3s ease-in-out;
-  }
-  .hover .hover-text .text1 {
-    font-size: 50px;
-    text-align: center;
-    padding: 100px 0px 0px 0px;
-  }
-  .hover .hover-text .text2 {
-    font-family: "Yu Gothic Medium";
-    font-size: 15px;
-    padding: 10px 20px;
-  }
-  /*ホバーエフェクト*/
-  .hover:hover .hover-text {
-    /*不透明にして表示*/
-    opacity: 1;
-  }
+    border-radius: 100vh;
+    padding: 20px 30px;
+}
 
+#project a.button2{
+    font-size: 1rem;
+    background: #ff3131;
+    color: #ffffff;
+    border-radius: 100vh;
+    padding: 20px 30px;
+}
+
+#project a.button3{
+    font-size: 1rem;
+    background: #38bdff;
+    color: #ffffff;
+    border-radius: 100vh;
+    padding: 20px 30px;
+}
+
+#project a.button4{
+    font-size: 1rem;
+    background: #ffbf59;
+    color: #ffffff;
+    border-radius: 100vh;
+    padding: 20px 30px;
+}
+
+#project a.button5{
+    font-size: 1rem;
+    background: #004aad;
+    color: #ffffff;
+    border-radius: 100vh;
+    padding: 20px 30px;
+}
+
+#project a.button6{
+    font-size: 1rem;
+    background: #8c52ff;
+    color: #ffffff;
+    border-radius: 100vh;
+    padding: 20px 30px;
+}
 
 /*profile
 ------------------------------------------------------------------------------------*/
