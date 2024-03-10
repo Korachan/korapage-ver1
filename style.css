@@ -338,12 +338,6 @@ footer p {
 }
 
 
-
-
-
-
-
-
 /*responsive
 ------------------------------------------------------------------------------*/
 @media (max-width: 760px) {
@@ -389,21 +383,15 @@ footer p {
     }
 
     /*project----------------------------------------*/
-    #project .page-title{
-        margin-top: 20px;
+    #project .page-title {
+        margin-top: 20%;
+        text-align: center;
     }
-
     .container {
-        display: grid;
-        justify-content: center;
-        margin: 50px 0px 150px 0px; 
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 1fr);
-        gap: 50px;
     }
     .item {
         grid-template-columns: 1fr;
-        gap: 50px;
     }
 
     /*profile------------------------------------------*/
