@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>kora - profile</title>
+        <meta name="description" content="b">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--css-
+    ----------------------------------------------------------->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+    <style>
+
+     
+/*========= レイアウトのためのCSS ===============*/
+
+
+/* メインナビゲーション */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 3列のグリッド */
+    grid-auto-rows: minmax(50px, auto); /* 行の高さを自動調整 */
+    gap: 20px; /* アイテム間の間隔 */
+    margin: 10% 5% 50% 5%;/*top,right,bottom,left*/
+}
+
+/*-------------
+----------------------------------------------------*/
+
+.grid-item1 {
+    background-color: #118d51; /* コンテンツの背景色 */
+    padding: 20px; /* 内側の余白 */
+    text-align: center; /* 中央揃え */
+    border-radius: 50% 20% / 10% 40%; /* 丸みを付ける */
+
+}
+
+.grid-item2 {
+    background-color: #207050; /* コンテンツの背景色 */
+    padding: 20px; /* 内側の余白 */
+    text-align: center; /* 中央揃え */
+    border-radius: 50% 20% / 10% 40%; /* 丸みを付ける */
+}
+
+.grid-item3 {
+    background-color: #3edb8f; /* コンテンツの背景色 */
+    padding: 20px; /* 内側の余白 */
+    text-align: center; /* 中央揃え */
+    border-radius: 50% 20% / 10% 40%; /* 丸みを付ける */
+}
+
+.grid-item4 {
+    background-color: #42ad78; /* コンテンツの背景色 */
+    padding: 20px; /* 内側の余白 */
+    text-align: center; /* 中央揃え */
+    border-radius: 50% 20% / 10% 40%; /* 丸みを付ける */
+}
+
+.grid-item5 {
+    background-color: #34bd7a; /* コンテンツの背景色 */
+    padding: 20px; /* 内側の余白 */
+    text-align: center; /* 中央揃え */
+    border-radius: 50% 20% / 10% 40%; /* 丸みを付ける */
+}
+
+.grid-item6 {
+    background-color: #508a6e; /* コンテンツの背景色 */
+    padding: 20px; /* 内側の余白 */
+    text-align: center; /* 中央揃え */
+    border-radius: 50% 20% / 10% 40%; /* 丸みを付ける */
+}
+
+.grid-item7 {
+    background-color: #7ba86a; /* コンテンツの背景色 */
+    padding: 20px; /* 内側の余白 */
+    text-align: center; /* 中央揃え */
+    border-radius:50% 20% / 10% 40%; /* 丸みを付ける */
+}
+
+.grid-item8 {
+    background-color: #28a56d; /* コンテンツの背景色 */
+    padding: 20px; /* 内側の余白 */
+    text-align: center; /* 中央揃え */
+    border-radius: 50% 20% / 10% 40%; /* 丸みを付ける */
+}
+
+.grid-item9 {
+    background-color: #98dbbb; /* コンテンツの背景色 */
+    padding: 20px; /* 内側の余白 */
+    text-align: center; /* 中央揃え */
+    border-radius: 50% 20% / 10% 40%; /* 丸みを付ける */
+}
+
+
+
+@media (max-width: 700px) {
+    #g-nav{
+    /*position:fixed;にし、z-indexの数値を小さくして最背面へ*/
+    position:fixed;
+    z-index: -1;
+    opacity: 0;/*はじめは透過0*/
+    /*ナビの位置と形状*/
+    top:0;
+    width:100%;
+    height: 100vh;/*ナビの高さ*/
+    background:rgba(255, 255, 255, 0.95);
+    
+    /*動き*/
+    transition: all 0.3s;
+}
+
+/*アクティブクラスがついたら透過なしにして最前面へ*/
+#g-nav.panelactive{
+  opacity: 1;
+  z-index:999;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    display: none;
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+#g-nav.panelactive ul {
+    display: block;
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+  list-style: none;
+    text-align: center; 
+}
+
+#g-nav li a{
+  color: #00bf63;
+  text-decoration: none;
+  padding:10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn1{
+  position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+  top:10px;
+  right: 10px;
+  cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+  
+/*×に変化*/  
+.openbtn1 span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+  background-color: #00bf63;
+    width: 45%;
+  }
+
+.openbtn1 span:nth-of-type(1) {
+  top:15px; 
+}
+
+.openbtn1 span:nth-of-type(2) {
+  top:23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+  top:31px;
+}
+
+.openbtn1.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.openbtn1.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+/*---------------------------------------------------------------
+----------------------------------*/
+.page-title{
+    font-size: 2.5rem;
+    }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列のグリッド */
+    grid-auto-rows: minmax(50px, auto); /* 行の高さを自動調整 */
+    gap: 20px; /* アイテム間の間隔 */
+    margin: 10% 5% 70% 5%;/*top,right,bottom,left*/
+}
+}
+    </style>
+    
+
+</head>
+
+<body>
+    <header class="page-header wrapper">
+        <h1><a href="index.html"><img class="logo" src="images/Kora.png" alt=""></a></h1>
+        
+        <div class="openbtn1"><span></span><span></span><span></span></div>
+        <nav id="g-nav">
+        <div id="g-nav-list">
+        <nav>
+            <ul class="main-nav">
+                <li><a href="project.html">project</a></li>
+                <li><a href="service.html">service</a></li>
+                <li><a href="profile.html">profile</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+        </div>
+        </nav>
+    </header>
+
+
+          
+    <div id="profile" class="big-bg">
+        <div class="wrapper">
+            <h2 class="page-title">service</h2>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item1">coming soon</div>
+            <div class="grid-item2">coming soon</div>
+            <div class="grid-item3">coming soon</div>
+            <div class="grid-item4">coming soon</div>
+            <div class="grid-item5">coming soon</div>
+            <div class="grid-item6">coming soon</div>
+            <div class="grid-item7">coming soon</div>
+            <div class="grid-item8">coming soon</div>
+            <div class="grid-item9">coming soon</div>
+        </div>
+      
+
+            
+      
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+    <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-1-15/js/5-1-15.js"></script>
+    
+    <script>
+        $(".openbtn1").click(function () {//ボタンがクリックされたら
+  $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+    $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+});
+
+$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+    $(".openbtn1").removeClass('active');//ボタンの activeクラスを除去し
+    $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+});
+    </script>
+    
+    </body>
+
+    <footer>
+        <div class="wrapper">
+            <p><small>&copy; 2023 kora </small></p>
+        </div>
+    </footer>
+
+    </html>
